@@ -1,0 +1,23 @@
+# Environment and credentials
+.env
+.env.*
+!.env.example
+
+# PostgreSQL backups and exports
+*.backup
+*.dump
+*.sql.gz
+
+# Temporary files
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Excel temporary files
+~$*.xlsx
+~$*.xls
+
+# Editor and OS files
+.vscode/
+.idea/
