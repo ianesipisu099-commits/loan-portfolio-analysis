@@ -1,5 +1,35 @@
 # Loan Portfolio & Credit Risk Analysis
 
+| Project detail | Description |
+|---|---|
+| Project type | Portfolio analysis and credit-risk segmentation |
+| Database | PostgreSQL |
+| Dataset | 39,717 historical LendingClub loans (2007–2011) |
+| Deliverables | 9 SQL scripts, 5 visualisations and a 7-sheet Excel report |
+
+## Contents
+
+-   [1. Project Overview](#1-project-overview)
+-   [2. Executive Summary](#2-executive-summary)
+-   [3. Business Problem](#3-business-problem)
+-   [4. Project Objectives](#4-project-objectives)
+-   [5. Dataset Overview](#5-dataset-overview)
+-   [6. Data Cleaning and Preparation](#6-data-cleaning-and-preparation)
+-   [7. Data Quality Assurance and
+    Validation](#7-data-quality-assurance-and-validation)
+-   [8. Analytical Methodology and SQL
+    Approach](#8-analytical-methodology-and-sql-approach)
+-   [9. Key Findings and
+    Visualisations](#9-key-findings-and-visualisations)
+-   [10. Business Insights and
+    Implications](#10-business-insights-and-implications)
+-   [11. Technical Skills
+    Demonstrated](#11-technical-skills-demonstrated)
+-   [12. Project Structure](#12-project-structure)
+-   [13. How to Run the Project](#13-how-to-run-the-project)
+-   [14. Limitations and Assumptions](#14-limitations-and-assumptions)
+-   [15. Conclusion](#15-conclusion)
+
 ## 1. Project Overview
 
 This project uses PostgreSQL to analyse a historical LendingClub loan
@@ -117,14 +147,14 @@ The analysis was guided by the following objectives:
 The project uses a historical LendingClub loan dataset containing
 individual loan records and borrower information.
 
-  Dataset characteristic   Description
-  ------------------------ ----------------
-  Total records            39,717 loans
-  Original columns         111
-  Origination period       2007--2011
-  Original data format     CSV
-  Data dictionary          Excel workbook
-  Database platform        PostgreSQL
+| Dataset characteristic | Description |
+|---|---|
+| Total records | 39,717 loans |
+| Original columns | 111 |
+| Origination period | 2007–2011 |
+| Original data format | CSV |
+| Data dictionary | Excel workbook |
+| Database platform | PostgreSQL |
 
 The accompanying data dictionary was used to understand the meaning of
 the available fields and their relevance to the analysis.
@@ -288,75 +318,17 @@ distinct stage of the workflow.
 
 ### SQL analysis workflow
 
-  -----------------------------------------------------------------------------
-  Script                                     Focus            Purpose
-  ------------------------------------------ ---------------- -----------------
-  `01_data_loading_and_setup.sql`            Database setup   Establishes
-                                                              database schemas
-                                                              and examines the
-                                                              imported source
-                                                              table.
-
-  `02_data_profiling.sql`                    Data profiling   Examines column
-                                                              structures,
-                                                              missing values,
-                                                              distributions and
-                                                              numerical ranges.
-
-  `03_data_cleaning.sql`                     Data preparation Converts data
-                                                              types,
-                                                              standardises
-                                                              values and
-                                                              creates the
-                                                              cleaned
-                                                              analytical table.
-
-  `04_data_quality_validation.sql`           Data validation  Checks record
-                                                              integrity,
-                                                              completeness,
-                                                              chronology and
-                                                              financial
-                                                              consistency.
-
-  `05_portfolio_overview.sql`                Portfolio        Examines loan
-                                             overview         volumes, funding,
-                                                              origination
-                                                              trends, terms and
-                                                              credit-grade
-                                                              pricing.
-
-  `06_loan_performance_analysis.sql`         Loan performance Compares loan
-                                                              outcomes, payment
-                                                              components,
-                                                              recoveries and
-                                                              recorded
-                                                              outstanding
-                                                              principal.
-
-  `07_borrower_risk_analysis.sql`            Borrower risk    Examines
-                                                              charge-off
-                                                              patterns across
-                                                              borrower
-                                                              characteristics
-                                                              and loan
-                                                              purposes.
-
-  `08_credit_risk_analysis.sql`              Credit-history   Investigates
-                                             risk             previous
-                                                              delinquencies,
-                                                              credit inquiries,
-                                                              utilisation and
-                                                              other credit
-                                                              indicators.
-
-  `09_grade_and_pricing_risk_analysis.sql`   Grade and        Compares credit
-                                             pricing risk     grades,
-                                                              subgrades,
-                                                              interest rates,
-                                                              charge-off rates
-                                                              and funding
-                                                              exposure.
-  -----------------------------------------------------------------------------
+| SQL script | Focus | Purpose |
+|---|---|---|
+| `01_data_loading_and_setup.sql` | Database setup | Establishes database schemas and examines the imported source table. |
+| `02_data_profiling.sql` | Data profiling | Examines column structures, missing values, distributions and numerical ranges. |
+| `03_data_cleaning.sql` | Data preparation | Converts data types, standardises values and creates the cleaned analytical table. |
+| `04_data_quality_validation.sql` | Data validation | Checks record integrity, completeness, chronology and financial consistency. |
+| `05_portfolio_overview.sql` | Portfolio overview | Examines loan volumes, funding, origination trends, terms and credit-grade pricing. |
+| `06_loan_performance_analysis.sql` | Loan performance | Compares loan outcomes, payment components, recoveries and recorded outstanding principal. |
+| `07_borrower_risk_analysis.sql` | Borrower risk | Examines charge-off patterns across borrower characteristics and loan purposes. |
+| `08_credit_risk_analysis.sql` | Credit-history risk | Investigates previous delinquencies, credit inquiries, utilisation and other credit indicators. |
+| `09_grade_and_pricing_risk_analysis.sql` | Grade and pricing risk | Compares credit grades, subgrades, interest rates, charge-off rates and funding exposure. |
 
 ### Analytical methodology
 
@@ -414,12 +386,12 @@ including:
 The analysis covered **39,717 loans** with a total funded amount of
 approximately **\$434.81 million**.
 
-  Loan status     Number of loans   Share of portfolio
-  ------------- ----------------- --------------------
-  Fully Paid               32,950               82.96%
-  Charged Off               5,627               14.17%
-  Current                   1,140                2.87%
-  **Total**            **39,717**             **100%**
+| Loan status | Number of loans | Share of portfolio |
+|---|---:|---:|
+| Fully Paid | 32,950 | 82.96% |
+| Charged Off | 5,627 | 14.17% |
+| Current | 1,140 | 2.87% |
+| **Total** | **39,717** | **100%** |
 
 Among resolved loans, the overall charge-off rate was **14.59%**.
 
@@ -428,15 +400,15 @@ Among resolved loans, the overall charge-off rate was **14.59%**.
 Charge-off rates increased broadly as credit grades moved from A to G.
 Average interest rates also increased across the grades.
 
-  Grade     Average interest rate   Charge-off rate
-  ------- ----------------------- -----------------
-  A                         7.34%             5.99%
-  B                        11.02%            12.21%
-  C                        13.55%            17.19%
-  D                        15.72%            21.99%
-  E                        17.71%            26.85%
-  F                        19.75%            32.68%
-  G                        21.40%            33.78%
+| Grade | Average interest rate | Charge-off rate |
+|---|---:|---:|
+| A | 7.34% | 5.99% |
+| B | 11.02% | 12.21% |
+| C | 13.55% | 17.19% |
+| D | 15.72% | 21.99% |
+| E | 17.71% | 26.85% |
+| F | 19.75% | 32.68% |
+| G | 21.40% | 33.78% |
 
 The broad pattern shows higher observed charge-off rates in lower credit
 grades. The subgrade analysis was not perfectly linear at every
@@ -444,10 +416,10 @@ individual subgrade.
 
 ### 9.3 Loan term and performance
 
-  Loan term     Number of loans   Share of portfolio   Charge-off rate
-  ----------- ----------------- -------------------- -----------------
-  36 months              29,096               73.26%            11.09%
-  60 months              10,621               26.74%            25.31%
+| Loan term | Number of loans | Share of portfolio | Charge-off rate |
+|---|---:|---:|---:|
+| 36 months | 29,096 | 73.26% | 11.09% |
+| 60 months | 10,621 | 26.74% | 25.31% |
 
 The historical portfolio showed a higher charge-off rate among 60-month
 loans. This is an observed relationship and does not establish that the
@@ -475,13 +447,13 @@ should not be interpreted as evidence of causation.
 Revolving credit utilisation showed a consistent increase in charge-off
 rates across the analysed bands.
 
-  Revolving utilisation     Charge-off rate
-  ----------------------- -----------------
-  0--20%                              9.92%
-  20.01--40%                         11.88%
-  40.01--60%                         14.70%
-  60.01--80%                         16.92%
-  Above 80%                          20.09%
+| Revolving utilisation | Charge-off rate |
+|---|---:|
+| 0–20% | 9.92% |
+| 20.01–40% | 11.88% |
+| 40.01–60% | 14.70% |
+| 60.01–80% | 16.92% |
+| Above 80% | 20.09% |
 
 Other indicators also showed differences:
 
@@ -530,8 +502,7 @@ the SQL analysis.
 
 **Charge-off rate by revolving credit utilisation**
 
-![Charge-off rate by revolving
-utilisation](results/charge-off-by-revolving-utilisation.png)
+![Charge-off rate by revolving credit utilisation](results/charge-off-by-revolving-utilisation.png)
 
 **Funded amount by credit grade**
 
@@ -663,37 +634,17 @@ reporting.
 
 ### Analytical SQL techniques
 
-  ---------------------------------------------------------------------
-  SQL technique                      Application
-  ---------------------------------- ----------------------------------
-  Common Table Expressions (CTEs)    Organising multi-step analytical
-                                     queries
-
-  Aggregate functions                Calculating counts, totals,
-                                     averages and medians
-
-  `CASE` expressions                 Creating risk bands and
-                                     classifying records
-
-  `FILTER`                           Calculating conditional metrics
-                                     within grouped results
-
-  `GROUP BY`                         Segmenting portfolio performance
-
-  Window functions                   Supporting comparative and ranked
-                                     analysis
-
-  `NULLIF`                           Preventing division-by-zero errors
-
-  Date and text functions            Parsing and standardising source
-                                     fields
-
-  Conditional calculations           Deriving charge-off rates and
-                                     other portfolio measures
-
-  `ORDER BY`                         Ranking and presenting analytical
-                                     results
-  ---------------------------------------------------------------------
+| SQL technique | Application |
+|---|---|
+| Common Table Expressions (CTEs) | Organising multi-step analytical queries |
+| Aggregate functions | Calculating counts, totals, averages, minimums and maximums |
+| `CASE` expressions | Creating risk bands and classifying records |
+| `FILTER` | Calculating conditional metrics within grouped results |
+| `GROUP BY` | Segmenting portfolio performance |
+| `NULLIF` | Preventing division-by-zero errors |
+| Date and text functions | Parsing and standardising source fields |
+| Conditional calculations | Deriving charge-off rates and other portfolio measures |
+| `ORDER BY` | Ranking and presenting analytical results |
 
 ### Analytical interpretation and reporting
 
@@ -716,7 +667,7 @@ workbook and the exported visualisations.
 ``` text
 loan-portfolio-analysis/
 │
-├── data/
+├── Data/
 │   └── raw/
 │       ├── loan.csv
 │       └── Data_Dictionary.xlsx
@@ -745,7 +696,7 @@ loan-portfolio-analysis/
 └── README.md
 ```
 
--   `data/raw/` --- Original loan dataset and data dictionary, included
+-   `Data/raw/` --- Original loan dataset and data dictionary, included
     subject to the source dataset's redistribution terms.
 -   `results/` --- Five exported charts covering portfolio composition,
     credit-grade risk, loan-term risk, revolving utilisation and funding
@@ -796,44 +747,17 @@ and the setup script.
 Run the nine scripts from the `sql/` directory in the following
 sequence:
 
-  -------------------------------------------------------------------------------
-               Order SQL script                                 Purpose
-  ------------------ ------------------------------------------ -----------------
-                   1 `01_data_loading_and_setup.sql`            Database and
-                                                                schema setup
-
-                   2 `02_data_profiling.sql`                    Initial dataset
-                                                                inspection and
-                                                                profiling
-
-                   3 `03_data_cleaning.sql`                     Data
-                                                                transformation
-                                                                and creation of
-                                                                the cleaned table
-
-                   4 `04_data_quality_validation.sql`           Validation of the
-                                                                cleaned dataset
-
-                   5 `05_portfolio_overview.sql`                Overall portfolio
-                                                                analysis
-
-                   6 `06_loan_performance_analysis.sql`         Loan outcomes and
-                                                                payment analysis
-
-                   7 `07_borrower_risk_analysis.sql`            Borrower
-                                                                characteristics
-                                                                and risk patterns
-
-                   8 `08_credit_risk_analysis.sql`              Credit-history
-                                                                indicators and
-                                                                risk patterns
-
-                   9 `09_grade_and_pricing_risk_analysis.sql`   Credit grades,
-                                                                subgrades,
-                                                                interest rates
-                                                                and funding
-                                                                exposure
-  -------------------------------------------------------------------------------
+| Order | SQL script | Purpose |
+|---:|---|---|
+| 1 | `01_data_loading_and_setup.sql` | Database and schema setup |
+| 2 | `02_data_profiling.sql` | Initial dataset inspection and profiling |
+| 3 | `03_data_cleaning.sql` | Data transformation and creation of the cleaned table |
+| 4 | `04_data_quality_validation.sql` | Validation of the cleaned dataset |
+| 5 | `05_portfolio_overview.sql` | Overall portfolio analysis |
+| 6 | `06_loan_performance_analysis.sql` | Loan outcomes and payment analysis |
+| 7 | `07_borrower_risk_analysis.sql` | Borrower characteristics and risk patterns |
+| 8 | `08_credit_risk_analysis.sql` | Credit-history indicators and risk patterns |
+| 9 | `09_grade_and_pricing_risk_analysis.sql` | Credit grades, subgrades, interest rates and funding exposure |
 
 Execute each script completely before moving to the next one.
 
